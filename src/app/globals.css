@@ -1,0 +1,501 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #faf7f2;
+  --color-paper: #f5f0e8;
+  --color-ink: #1a1a1a;
+  --color-terracotta: #c45c3e;
+  --color-rust: #a04030;
+  --color-gold: #d4a574;
+  --color-stone: #8b7355;
+  --color-marble: #e8e4dc;
+  --color-shadow: rgba(26, 26, 26, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+  --color-accent: var(--color-terracotta);
+  --font-ancient: "Cinzel", serif;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  --font-data: "Space Mono", monospace;
+}
+
+* {
+  cursor: none;
+}
+
+::selection {
+  background-color: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-grotesk);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANCIENT NEO BRUTALIST COMPONENTS
+   ============================================ */
+
+/* Brutalist Box - Paper Cut Effect */
+.brutal-box {
+  background: var(--color-paper);
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-ink);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brutal-box:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--color-ink);
+}
+
+.brutal-box:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+/* Sticker Effect */
+.sticker {
+  background: var(--color-cream);
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.sticker:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 6px 6px 0 var(--color-terracotta);
+}
+
+/* Stamp Effect */
+.stamp {
+  border: 3px dashed var(--color-terracotta);
+  padding: 0.5rem 1rem;
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+.stamp::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--color-terracotta);
+}
+
+/* Torn Paper Edge */
+.torn-edge {
+  position: relative;
+}
+
+.torn-edge::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(135deg, var(--color-cream) 25%, transparent 25%),
+              linear-gradient(225deg, var(--color-cream) 25%, transparent 25%);
+  background-size: 20px 20px;
+}
+
+/* Squiggly Underline */
+.squiggly {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-terracotta);
+  text-underline-offset: 4px;
+}
+
+/* Ancient Column Border */
+.column-border {
+  border-left: 8px solid var(--color-ink);
+  border-right: 8px solid var(--color-ink);
+  position: relative;
+}
+
+.column-border::before,
+.column-border::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  right: -8px;
+  height: 16px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-ink) 0px,
+    var(--color-ink) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.column-border::before { top: 0; }
+.column-border::after { bottom: 0; }
+
+/* Marble Texture */
+.marble-bg {
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(139,115,85,0.1) 0%, transparent 50%),
+    var(--color-marble);
+}
+
+/* Grid Paper Background */
+.grid-paper {
+  background-image: 
+    linear-gradient(rgba(212,165,116,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,165,116,0.3) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-color: var(--color-paper);
+}
+
+/* Notebook Lines */
+.notebook-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 31px,
+    var(--color-gold) 31px,
+    var(--color-gold) 32px
+  );
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn-brutal {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border: 3px solid var(--color-ink);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 4px 4px 0 var(--color-terracotta);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-brutal:hover {
+  background: var(--color-terracotta);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+.btn-brutal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--color-terracotta);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border: 3px solid var(--color-ink);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-ink);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  color: var(--color-cream);
+}
+
+.btn-outline:hover::before {
+  left: 0;
+}
+
+/* ============================================
+   CUSTOM CURSOR - Playful Style
+   ============================================ */
+
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============================================
+   MARQUEE / TICKER
+   ============================================ */
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Reverse marquee */
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+
+@keyframes loading-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s infinite linear;
+}
+
+/* Bouncy Load */
+@keyframes bounce-load {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.bounce-load {
+  animation: bounce-load 0.6s ease infinite;
+}
+
+/* ============================================
+   FUN ANIMATIONS
+   ============================================ */
+
+/* Wiggle */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out infinite;
+}
+
+/* Pop */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: pop 0.3s ease;
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(1deg); }
+  75% { transform: translateY(5px) rotate(-1deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Spin Slow */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Pulse Scale */
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+/* Shake on hover */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-5deg); }
+  75% { transform: translateX(5px) rotate(5deg); }
+}
+
+.hover-shake:hover {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* ============================================
+   TEXT EFFECTS
+   ============================================ */
+
+/* Outline Text */
+.text-outline {
+  -webkit-text-stroke: 2px var(--color-ink);
+  color: transparent;
+}
+
+.text-outline-thick {
+  -webkit-text-stroke: 3px var(--color-ink);
+  color: transparent;
+}
+
+/* Shadow Text */
+.text-shadow-brutal {
+  text-shadow: 4px 4px 0 var(--color-terracotta);
+}
+
+/* Highlight Effect */
+.highlight {
+  background: linear-gradient(180deg, transparent 60%, var(--color-gold) 60%);
+  padding: 0 4px;
+}
+
+.highlight-full {
+  background: var(--color-gold);
+  padding: 2px 6px;
+  display: inline-block;
+}
+
+/* ============================================
+   INTERACTIVE ELEMENTS
+   ============================================ */
+
+/* Draggable look */
+.draggable {
+  cursor: grab;
+  user-select: none;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+  border-left: 3px solid var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: 2px solid var(--color-paper);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}
+
+/* ============================================
+   FOCUS & ACCESSIBILITY
+   ============================================ */
+
+*:focus-visible {
+  outline: 3px dashed var(--color-terracotta);
+  outline-offset: 3px;
+}
+
+/* Mobile - show regular cursor */
+@media (max-width: 768px) {
+  * {
+    cursor: auto;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.border-brutal {
+  border: 3px solid var(--color-ink);
+}
+
+.border-brutal-thick {
+  border: 5px solid var(--color-ink);
+}
+
+.shadow-brutal {
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+.shadow-brutal-lg {
+  box-shadow: 10px 10px 0 var(--color-ink);
+}
+
+.shadow-terracotta {
+  box-shadow: 6px 6px 0 var(--color-terracotta);
+}
+
+.bg-cream { background-color: var(--color-cream); }
+.bg-paper { background-color: var(--color-paper); }
+.bg-ink { background-color: var(--color-ink); }
+.bg-terracotta { background-color: var(--color-terracotta); }
+.bg-gold { background-color: var(--color-gold); }
+.bg-marble { background-color: var(--color-marble); }
+
+.text-ink { color: var(--color-ink); }
+.text-terracotta { color: var(--color-terracotta); }
+.text-cream { color: var(--color-cream); }
+.text-stone { color: var(--color-stone); }
+.text-gold { color: var(--color-gold); }
+
+.rotate-1 { transform: rotate(1deg); }
+.rotate-2 { transform: rotate(2deg); }
+.rotate-3 { transform: rotate(3deg); }
+.-rotate-1 { transform: rotate(-1deg); }
+.-rotate-2 { transform: rotate(-2deg); }
+.-rotate-3 { transform: rotate(-3deg); }
