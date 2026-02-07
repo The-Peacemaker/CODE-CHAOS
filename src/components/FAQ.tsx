@@ -45,20 +45,20 @@ export default function FAQ() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-6 bg-[var(--color-paper)] relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-[var(--color-paper)] relative overflow-hidden"
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       
       {/* Decorative Shapes */}
       <motion.div
-        className="absolute top-20 right-10 w-20 h-20 bg-[var(--color-gold)] border-3 border-[var(--color-ink)] rotate-12"
-        style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
+        className="absolute top-20 right-4 sm:right-10 w-12 h-12 sm:w-20 sm:h-20 bg-[var(--color-gold)] border-2 sm:border-3 border-[var(--color-ink)] rotate-12"
+        style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
         animate={{ rotate: [12, 20, 12] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-32 left-10 w-16 h-16 bg-[var(--color-terracotta)] border-3 border-[var(--color-ink)] rounded-full"
+        className="absolute bottom-32 left-4 sm:left-10 w-10 h-10 sm:w-16 sm:h-16 bg-[var(--color-terracotta)] border-2 sm:border-3 border-[var(--color-ink)] rounded-full"
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
       />
@@ -69,28 +69,28 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div 
-            className="inline-block px-4 py-2 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-sm uppercase border-2 border-[var(--color-ink)] mb-6"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-xs sm:text-sm uppercase border-2 border-[var(--color-ink)] mb-4 sm:mb-6"
             style={{ boxShadow: "3px 3px 0 var(--color-ink)", rotate: "-2deg" }}
           >
             Got Questions?
           </motion.div>
           
-          <h2 className="font-[family-name:var(--font-ancient)] text-5xl md:text-7xl font-black text-[var(--color-ink)] leading-none">
+          <h2 className="font-[family-name:var(--font-ancient)] text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-ink)] leading-none">
             FAQ
-            <span className="relative inline-block ml-4">
-              <Star className="w-8 h-8 text-[var(--color-terracotta)] fill-[var(--color-terracotta)]" />
+            <span className="relative inline-block ml-2 sm:ml-4">
+              <Star className="w-5 h-5 sm:w-8 sm:h-8 text-[var(--color-terracotta)] fill-[var(--color-terracotta)]" />
             </span>
           </h2>
-          <p className="mt-4 font-[family-name:var(--font-grotesk)] text-lg text-[var(--color-stone)]">
+          <p className="mt-3 sm:mt-4 font-[family-name:var(--font-grotesk)] text-base sm:text-lg text-[var(--color-stone)]">
             Everything you need to know before entering the chaos
           </p>
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -101,35 +101,35 @@ export default function FAQ() {
                 rotate: openIndex === index ? 0 : (index % 2 === 0 ? -1 : 1)
               } : {}}
               transition={{ delay: 0.2 + index * 0.1 }}
-              className="bg-[var(--color-cream)] border-3 border-[var(--color-ink)]"
-              style={{ boxShadow: openIndex === index ? "6px 6px 0 var(--color-terracotta)" : "4px 4px 0 var(--color-ink)" }}
+              className="bg-[var(--color-cream)] border-2 sm:border-3 border-[var(--color-ink)]"
+              style={{ boxShadow: openIndex === index ? "4px 4px 0 var(--color-terracotta)" : "3px 3px 0 var(--color-ink)" }}
             >
               <motion.button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 whileHover={{ x: 5 }}
-                className="w-full flex items-center justify-between p-6 text-left group"
+                className="w-full flex items-center justify-between p-4 sm:p-6 text-left group"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                   <motion.div
-                    className="w-8 h-8 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center font-[family-name:var(--font-ancient)] font-bold text-sm"
+                    className="w-6 h-6 sm:w-8 sm:h-8 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center font-[family-name:var(--font-ancient)] font-bold text-xs sm:text-sm flex-shrink-0"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
                     {index + 1}
                   </motion.div>
-                  <span className="font-[family-name:var(--font-ancient)] text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-terracotta)] transition-colors pr-4">
+                  <span className="font-[family-name:var(--font-ancient)] text-sm sm:text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-terracotta)] transition-colors pr-2 sm:pr-4">
                     {faq.question}
                   </span>
                 </div>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="flex-shrink-0 w-8 h-8 bg-[var(--color-paper)] border-2 border-[var(--color-ink)] flex items-center justify-center"
+                  className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-[var(--color-paper)] border-2 border-[var(--color-ink)] flex items-center justify-center"
                 >
                   {openIndex === index ? (
-                    <Minus className="w-4 h-4 text-[var(--color-terracotta)]" />
+                    <Minus className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--color-terracotta)]" />
                   ) : (
-                    <Plus className="w-4 h-4 text-[var(--color-ink)]" />
+                    <Plus className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--color-ink)]" />
                   )}
                 </motion.div>
               </motion.button>
@@ -143,8 +143,8 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 border-t-2 border-dashed border-[var(--color-ink)]/30">
-                      <p className="pt-4 font-[family-name:var(--font-grotesk)] text-[var(--color-stone)] leading-relaxed pl-12">
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t-2 border-dashed border-[var(--color-ink)]/30">
+                      <p className="pt-3 sm:pt-4 font-[family-name:var(--font-grotesk)] text-sm sm:text-base text-[var(--color-stone)] leading-relaxed pl-8 sm:pl-12">
                         {faq.answer}
                       </p>
                     </div>
@@ -160,21 +160,21 @@ export default function FAQ() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 1 }}
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-12 text-center"
         >
           <motion.div 
-            className="inline-block bg-[var(--color-paper)] border-3 border-[var(--color-ink)] p-6"
-            style={{ boxShadow: "4px 4px 0 var(--color-ink)", rotate: "1deg" }}
+            className="inline-block bg-[var(--color-paper)] border-2 sm:border-3 border-[var(--color-ink)] p-4 sm:p-6"
+            style={{ boxShadow: "3px 3px 0 var(--color-ink)", rotate: "1deg" }}
             whileHover={{ rotate: 0, scale: 1.02 }}
           >
-            <HelpCircle className="w-8 h-8 mx-auto text-[var(--color-terracotta)] mb-3" />
-            <p className="font-[family-name:var(--font-grotesk)] text-[var(--color-stone)] mb-3">
+            <HelpCircle className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-[var(--color-terracotta)] mb-2 sm:mb-3" />
+            <p className="font-[family-name:var(--font-grotesk)] text-sm sm:text-base text-[var(--color-stone)] mb-2 sm:mb-3">
               Still have questions?
             </p>
             <motion.a
               href="mailto:codeandchaos@vjcet.org"
               whileHover={{ scale: 1.05 }}
-              className="inline-block px-4 py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold border-2 border-[var(--color-ink)]"
+              className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-sm sm:text-base border-2 border-[var(--color-ink)]"
               style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
             >
               Reach out to us

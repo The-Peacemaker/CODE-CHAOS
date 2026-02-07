@@ -45,52 +45,52 @@ export default function Tracks() {
     <section
       id="tracks"
       ref={sectionRef}
-      className="py-24 bg-[var(--color-cream)] relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 bg-[var(--color-cream)] relative overflow-hidden"
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       
       {/* Decorative Shapes */}
       <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-[var(--color-gold)] border-3 border-[var(--color-ink)]"
-        style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
+        className="absolute top-20 left-4 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 bg-[var(--color-gold)] border-2 sm:border-3 border-[var(--color-ink)]"
+        style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
         animate={{ rotate: [0, 360] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-16 h-16 bg-[var(--color-terracotta)] border-3 border-[var(--color-ink)] rounded-full"
+        className="absolute bottom-40 right-4 sm:right-20 w-10 h-10 sm:w-16 sm:h-16 bg-[var(--color-terracotta)] border-2 sm:border-3 border-[var(--color-ink)] rounded-full"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <motion.div 
-            className="inline-block px-4 py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-data)] text-sm uppercase border-2 border-[var(--color-ink)] mb-6"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-data)] text-xs sm:text-sm uppercase border-2 border-[var(--color-ink)] mb-4 sm:mb-6"
             style={{ boxShadow: "3px 3px 0 var(--color-ink)", rotate: "-2deg" }}
           >
             Evaluation Criteria
           </motion.div>
           
-          <h2 className="font-[family-name:var(--font-ancient)] text-5xl md:text-7xl font-black text-[var(--color-ink)] leading-none">
+          <h2 className="font-[family-name:var(--font-ancient)] text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-ink)] leading-none">
             How We
             <br />
             <span className="relative inline-block">
               Judge
-              <Star className="absolute -right-8 -top-2 w-8 h-8 text-[var(--color-gold)] fill-[var(--color-gold)]" />
+              <Star className="absolute -right-6 sm:-right-8 -top-1 sm:-top-2 w-5 h-5 sm:w-8 sm:h-8 text-[var(--color-gold)] fill-[var(--color-gold)]" />
             </span>
             <span className="text-[var(--color-terracotta)]">!</span>
           </h2>
         </motion.div>
 
         {/* Main Track Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {tracks.map((track, index) => (
             <motion.div
               key={track.title}
@@ -98,12 +98,12 @@ export default function Tracks() {
               animate={isInView ? { opacity: 1, y: 0, rotate: track.rotation } : {}}
               transition={{ delay: 0.2 + index * 0.15, duration: 0.6 }}
               whileHover={{ y: -10, rotate: 0, scale: 1.02 }}
-              className="relative bg-[var(--color-paper)] border-4 border-[var(--color-ink)] p-8 min-h-[320px] flex flex-col cursor-pointer group"
-              style={{ boxShadow: "8px 8px 0 var(--color-ink)" }}
+              className="relative bg-[var(--color-paper)] border-3 sm:border-4 border-[var(--color-ink)] p-5 sm:p-8 min-h-[260px] sm:min-h-[320px] flex flex-col cursor-pointer group"
+              style={{ boxShadow: "5px 5px 0 var(--color-ink)" }}
             >
               {/* Number Badge */}
               <motion.div
-                className="absolute -top-4 -right-4 w-12 h-12 border-3 border-[var(--color-ink)] rounded-full flex items-center justify-center font-[family-name:var(--font-ancient)] text-xl font-black text-[var(--color-cream)]"
+                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 border-2 sm:border-3 border-[var(--color-ink)] rounded-full flex items-center justify-center font-[family-name:var(--font-ancient)] text-base sm:text-xl font-black text-[var(--color-cream)]"
                 style={{ backgroundColor: track.color }}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
@@ -113,25 +113,25 @@ export default function Tracks() {
 
               {/* Icon */}
               <div 
-                className="w-16 h-16 border-3 border-[var(--color-ink)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                className="w-12 h-12 sm:w-16 sm:h-16 border-2 sm:border-3 border-[var(--color-ink)] flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform"
                 style={{ backgroundColor: track.color }}
               >
-                <track.icon className="w-8 h-8 text-[var(--color-cream)]" strokeWidth={2} />
+                <track.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--color-cream)]" strokeWidth={2} />
               </div>
 
               {/* Title */}
-              <h3 className="font-[family-name:var(--font-ancient)] text-3xl font-black text-[var(--color-ink)] mb-2">
+              <h3 className="font-[family-name:var(--font-ancient)] text-2xl sm:text-3xl font-black text-[var(--color-ink)] mb-2">
                 {track.title}
               </h3>
 
               {/* Description */}
-              <p className="font-[family-name:var(--font-grotesk)] text-[var(--color-stone)] mb-auto">
+              <p className="font-[family-name:var(--font-grotesk)] text-sm sm:text-base text-[var(--color-stone)] mb-auto">
                 {track.description}
               </p>
 
               {/* Objective Tag */}
               <motion.div
-                className="inline-block self-start px-3 py-1 bg-[var(--color-ink)] text-[var(--color-cream)] border-2 border-[var(--color-ink)] font-[family-name:var(--font-data)] text-xs uppercase mt-4"
+                className="inline-block self-start px-2 sm:px-3 py-1 bg-[var(--color-ink)] text-[var(--color-cream)] border-2 border-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase mt-3 sm:mt-4"
                 style={{ boxShadow: "2px 2px 0 var(--color-stone)" }}
                 whileHover={{ x: 3 }}
               >
@@ -139,7 +139,7 @@ export default function Tracks() {
               </motion.div>
 
               {/* Tape decoration */}
-              <div className="absolute -top-2 left-8 w-16 h-5 bg-[var(--color-gold)]/70 border-2 border-[var(--color-ink)]" />
+              <div className="absolute -top-1.5 sm:-top-2 left-6 sm:left-8 w-10 sm:w-16 h-3 sm:h-5 bg-[var(--color-gold)]/70 border-2 border-[var(--color-ink)]" />
             </motion.div>
           ))}
         </div>
@@ -151,13 +151,13 @@ export default function Tracks() {
           transition={{ delay: 0.6 }}
         >
           <motion.div 
-            className="inline-block px-3 py-1 bg-[var(--color-paper)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-sm uppercase border-2 border-[var(--color-ink)] mb-6"
+            className="inline-block px-2 sm:px-3 py-1 bg-[var(--color-paper)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-xs sm:text-sm uppercase border-2 border-[var(--color-ink)] mb-4 sm:mb-6"
             style={{ boxShadow: "2px 2px 0 var(--color-ink)", rotate: "1deg" }}
           >
             Focus Areas
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             {focusAreas.map((area, index) => (
               <motion.div
                 key={area.title}
@@ -165,20 +165,20 @@ export default function Tracks() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.8 + index * 0.1 }}
                 whileHover={{ scale: 1.03, x: 5 }}
-                className="bg-[var(--color-paper)] border-3 border-[var(--color-ink)] p-5 flex items-center gap-4 cursor-pointer group"
-                style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
+                className="bg-[var(--color-paper)] border-2 sm:border-3 border-[var(--color-ink)] p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer group"
+                style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
               >
                 <div 
-                  className="w-12 h-12 border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                  className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0"
                   style={{ backgroundColor: area.color }}
                 >
-                  <area.icon className="w-6 h-6 text-[var(--color-cream)]" />
+                  <area.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-cream)]" />
                 </div>
-                <div>
-                  <div className="font-[family-name:var(--font-ancient)] text-lg font-bold text-[var(--color-ink)]">
+                <div className="min-w-0">
+                  <div className="font-[family-name:var(--font-ancient)] text-base sm:text-lg font-bold text-[var(--color-ink)]">
                     {area.title}
                   </div>
-                  <div className="font-[family-name:var(--font-data)] text-xs text-[var(--color-stone)]">
+                  <div className="font-[family-name:var(--font-data)] text-[10px] sm:text-xs text-[var(--color-stone)] truncate">
                     {area.desc}
                   </div>
                 </div>
@@ -192,11 +192,11 @@ export default function Tracks() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 1 }}
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-12 text-center"
         >
           <motion.p
-            className="inline-block px-6 py-3 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-lg border-3 border-[var(--color-ink)]"
-            style={{ boxShadow: "4px 4px 0 var(--color-ink)", rotate: "-1deg" }}
+            className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-base sm:text-lg border-2 sm:border-3 border-[var(--color-ink)]"
+            style={{ boxShadow: "3px 3px 0 var(--color-ink)", rotate: "-1deg" }}
             whileHover={{ rotate: 0, scale: 1.05 }}
           >
             Choose your path. Define your legacy.
