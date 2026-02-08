@@ -34,12 +34,6 @@ export const metadata: Metadata = {
   description: "Join the most intense 14-hour hackathon at VJCET. Build sustainable solutions, compete for ₹25,000+ prizes, and forge the future. February 25-26, 2026.",
   keywords: ["hackathon", "VJCET", "coding", "programming", "sustainability", "Kerala", "college hackathon"],
   authors: [{ name: "Code & Chaos Team" }],
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/favicon.svg",
-  },
   openGraph: {
     title: "Code & Chaos | VJCET 2026",
     description: "The most intense 14-hour hackathon at VJCET. Build. Compete. Conquer.",
