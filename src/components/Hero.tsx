@@ -260,7 +260,7 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [clickSparks, setClickSparks] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [clickSparks, setClickSparks] = useState<{ id: string; x: number; y: number }[]>([]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
