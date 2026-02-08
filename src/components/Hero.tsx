@@ -551,16 +551,17 @@ export default function Hero() {
           transition={{ delay: 2.6 }}
           className="font-[family-name:var(--font-grotesk)] text-base sm:text-lg md:text-2xl text-[var(--color-stone)] mt-6 sm:mt-8 max-w-xl"
         >
-          One night.{" "}
+          14 hours.{" "}
           <motion.span 
             className="bg-[var(--color-gold)] px-2 text-[var(--color-ink)] font-bold inline-block"
             whileHover={{ scale: 1.05, rotate: -2 }}
             animate={{ rotate: [0, 1, -1, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
-            Infinite possibilities.
+            Zero sleep.
           </motion.span>{" "}
-          A 14-hour overnight hackathon open to all Kerala colleges.
+          All colleges across Kerala.
+           one epic overnight hackathon.
         </motion.p>
 
         {/* Bottom Action Section */}
