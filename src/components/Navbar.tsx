@@ -105,7 +105,8 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <motion.button
+            <motion.a
+              href="/registration"
               initial={{ opacity: 0, rotate: 3 }}
               animate={{ opacity: 1, rotate: 3 }}
               transition={{ delay: 2.7 }}
@@ -120,7 +121,7 @@ export default function Navbar() {
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               />
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -204,16 +205,17 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <motion.button
+              <motion.a
+                href="/registration"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 w-full bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-xl py-5 uppercase tracking-wider border-3 border-[var(--color-ink)]"
+                className="mt-8 w-full bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-xl py-5 uppercase tracking-wider border-3 border-[var(--color-ink)] block text-center"
                 style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
               >
                 Register Now!
-              </motion.button>
+              </motion.a>
 
               <div className="mt-auto pb-8 text-center">
                 <motion.div 

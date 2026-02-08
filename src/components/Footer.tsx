@@ -98,9 +98,7 @@ export default function Footer() {
               className="flex flex-col items-start lg:items-end w-full lg:w-auto"
             >
               <motion.a
-                href="https://forms.gle/your-registration-form"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/registration"
                 whileHover={{ scale: 1.02, rotate: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="group relative bg-[var(--color-cream)] text-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-black text-lg sm:text-xl md:text-2xl px-8 sm:px-10 md:px-16 py-4 sm:py-5 md:py-8 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wider flex items-center gap-3 sm:gap-4 w-full lg:w-auto justify-center"

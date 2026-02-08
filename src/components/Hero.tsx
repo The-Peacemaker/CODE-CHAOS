@@ -626,9 +626,7 @@ export default function Hero() {
 
           {/* Register Button with extra flair */}
           <motion.a
-            href="https://forms.gle/your-registration-form"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/registration"
             whileHover={{ scale: 1.05, rotate: 2, y: -5 }}
             whileTap={{ scale: 0.95, rotate: -2 }}
             className="relative bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-black text-base sm:text-lg md:text-2xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wide flex items-center gap-2 sm:gap-3 md:gap-4 group overflow-hidden"

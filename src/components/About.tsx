@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { MapPin, Users, Clock, Sparkles, Star } from "lucide-react";
+import { MapPin, Users, Clock, Sparkles, Star, Coffee } from "lucide-react";
 import { useRef } from "react";
 import { DoodleSet1 } from "./Doodles";
 
@@ -143,7 +143,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
-          className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+          className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
         >
           <motion.div
             className="bg-[var(--color-terracotta)] text-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] p-4 sm:p-6"
@@ -174,6 +174,30 @@ export default function About() {
             </div>
             <div className="font-[family-name:var(--font-data)] text-xs sm:text-sm opacity-80 mt-2">
               6:00 PM - 8:00 AM (14 Hours Non-Stop!)
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="bg-[var(--color-cream)] text-[var(--color-ink)] border-3 sm:border-4 border-[var(--color-ink)] p-4 sm:p-6 relative overflow-hidden"
+            style={{ boxShadow: "4px 4px 0 var(--color-ink)", rotate: "1.5deg" }}
+            whileHover={{ rotate: 0, scale: 1.02 }}
+          >
+            <motion.div
+              className="absolute -right-2 -top-2"
+              animate={{ rotate: [0, 15, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <Coffee className="w-12 h-12 sm:w-16 sm:h-16 text-[var(--color-terracotta)] opacity-20" />
+            </motion.div>
+            <div className="font-[family-name:var(--font-ancient)] text-lg sm:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-2">
+              <Coffee className="w-5 h-5 text-[var(--color-terracotta)]" />
+              Fuel Up!
+            </div>
+            <div className="font-[family-name:var(--font-grotesk)] text-base sm:text-lg font-semibold text-[var(--color-terracotta)]">
+              Food & Refreshments
+            </div>
+            <div className="font-[family-name:var(--font-data)] text-xs sm:text-sm text-[var(--color-stone)] mt-2">
+              Available to ALL Participants!
             </div>
           </motion.div>
         </motion.div>
