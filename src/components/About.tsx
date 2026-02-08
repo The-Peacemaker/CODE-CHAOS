@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { MapPin, Users, Clock, Sparkles, Star } from "lucide-react";
 import { useRef } from "react";
+import { DoodleSet1 } from "./Doodles";
 
 const stats = [
   { icon: Clock, label: "Duration", value: "14 Hours", color: "var(--color-terracotta)" },
@@ -23,6 +24,9 @@ export default function About() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+      
+      {/* Floating Doodles */}
+      <DoodleSet1 />
       
       {/* Decorative Corner Stamps */}
       <motion.div

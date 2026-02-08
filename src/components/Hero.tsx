@@ -294,7 +294,7 @@ export default function Hero() {
     const rect = sectionRef.current?.getBoundingClientRect();
     if (rect) {
       const spark = {
-        id: Date.now(),
+        id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
       };
@@ -551,16 +551,16 @@ export default function Hero() {
           transition={{ delay: 2.6 }}
           className="font-[family-name:var(--font-grotesk)] text-base sm:text-lg md:text-2xl text-[var(--color-stone)] mt-6 sm:mt-8 max-w-xl"
         >
-          The largest{" "}
+          One night.{" "}
           <motion.span 
             className="bg-[var(--color-gold)] px-2 text-[var(--color-ink)] font-bold inline-block"
             whileHover={{ scale: 1.05, rotate: -2 }}
             animate={{ rotate: [0, 1, -1, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
-            overnight hackathon
+            Infinite possibilities.
           </motion.span>{" "}
-          at VJCET. Open to all Kerala colleges - where sustainable development meets creative madness!
+          A 14-hour overnight hackathon open to all Kerala colleges.
         </motion.p>
 
         {/* Bottom Action Section */}
@@ -602,7 +602,10 @@ export default function Hero() {
           </motion.div>
 
           {/* Register Button with extra flair */}
-          <motion.button
+          <motion.a
+            href="https://forms.gle/your-registration-form"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05, rotate: 2, y: -5 }}
             whileTap={{ scale: 0.95, rotate: -2 }}
             className="relative bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-black text-base sm:text-lg md:text-2xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wide flex items-center gap-2 sm:gap-3 md:gap-4 group overflow-hidden"
@@ -632,7 +635,7 @@ export default function Hero() {
             >
               ₹100
             </motion.span>
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Fun interaction hint - hidden on mobile */}

@@ -3,11 +3,12 @@
 import { motion, useInView } from "framer-motion";
 import { ChevronRight, Mail, Linkedin, Github, Star, Users } from "lucide-react";
 import { useRef, useState } from "react";
+import { DoodleSet3 } from "./Doodles";
 
 const studentCoordinators = [
   {
     name: "Benedict Chacko Mathew",
-    role: "Lead Coordinator",
+    role: "Co-Coordinator",
     links: { github: "#", linkedin: "#" },
   },
   {
@@ -15,18 +16,25 @@ const studentCoordinators = [
     role: "Co-Coordinator",
     links: { github: "#", linkedin: "#" },
   },
+  {
+    name: "Deena George",
+    role: "Co-Coordinator",
+    links: { github: "#", linkedin: "#" },
+  },
+  {
+    name: "Athulya Susan Laiju",
+    role: "Co-Coordinator",
+    links: { github: "#", linkedin: "#" },
+  },
 ];
 
 const staffCoordinators = [
-  { name: "Andrews Jose", role: "Faculty Advisor" },
-  { name: "Santhi M", role: "Department Coordinator" },
+  { name: "Andrews Jose", role: "Faculty Coordinator" },
+  { name: "Santhi M", role: "Faculty Coordinator" },
 ];
 
 const volunteers = [
-  "Tech Team Alpha",
-  "Design Squad",
-  "Operations Crew",
-  "Logistics Unit",
+  { name: "Bilja K Saji", role: "Volunteer" },
 ];
 
 export default function Team() {
@@ -42,6 +50,9 @@ export default function Team() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+
+      {/* Floating Doodles */}
+      <DoodleSet3 />
 
       {/* Decorative Shapes */}
       <motion.div
@@ -155,7 +166,7 @@ export default function Team() {
             animate={isInView ? { opacity: 1, x: 0, rotate: 2 } : {}}
             transition={{ delay: 0.4 }}
             whileHover={{ rotate: 0 }}
-            className="relative bg-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] p-5 sm:p-8"
+            className="relative bg-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] p-5 sm:p-8 h-fit"
             style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
           >
             {/* Label */}
@@ -166,8 +177,8 @@ export default function Team() {
               Faculty Coordinators
             </motion.div>
 
-            {/* Members */}
-            <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
+            {/* Members - Compact Grid */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
               {staffCoordinators.map((member, index) => (
                 <motion.div
                   key={member.name}
@@ -176,63 +187,65 @@ export default function Team() {
                   transition={{ delay: 0.5 + index * 0.1 }}
                   onHoverStart={() => setHoveredMember(member.name)}
                   onHoverEnd={() => setHoveredMember(null)}
-                  whileHover={{ x: 5 }}
-                  className="flex items-center justify-between bg-[var(--color-paper)] border-2 sm:border-3 border-[var(--color-ink)] p-3 sm:p-4 cursor-pointer group"
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-[var(--color-paper)] border-2 sm:border-3 border-[var(--color-ink)] p-3 sm:p-4 cursor-pointer group text-center"
                   style={{ boxShadow: hoveredMember === member.name ? "3px 3px 0 var(--color-gold)" : "2px 2px 0 var(--color-ink)" }}
                 >
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-[family-name:var(--font-ancient)] text-sm sm:text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-terracotta)] transition-colors truncate">
-                      {member.name}
-                    </h3>
-                    <p className="font-[family-name:var(--font-data)] text-[10px] sm:text-xs text-[var(--color-stone)] uppercase tracking-wider">
-                      {member.role}
-                    </p>
-                  </div>
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--color-stone)] group-hover:text-[var(--color-terracotta)] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                  <h3 className="font-[family-name:var(--font-ancient)] text-sm sm:text-base font-bold text-[var(--color-ink)] group-hover:text-[var(--color-terracotta)] transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="font-[family-name:var(--font-data)] text-[10px] sm:text-xs text-[var(--color-stone)] uppercase tracking-wider mt-1">
+                    {member.role}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
 
-        {/* Volunteer Teams */}
+        {/* Volunteers Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7 }}
+          className="relative bg-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] p-5 sm:p-8 max-w-2xl mx-auto"
+          style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
         >
-          <div className="text-center mb-4 sm:mb-6">
-            <motion.div 
-              className="inline-block px-2 sm:px-3 py-1 bg-[var(--color-paper)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-xs sm:text-sm uppercase border-2 border-[var(--color-ink)]"
-              style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
-            >
-              <Users className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1 sm:mr-2" />
-              Powered by our volunteer teams
-            </motion.div>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-            {volunteers.map((team, index) => (
+          {/* Label */}
+          <motion.div 
+            className="absolute -top-3 sm:-top-4 left-4 sm:left-6 px-2 sm:px-3 py-0.5 sm:py-1 bg-[var(--color-ink)] text-[var(--color-cream)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase border-2 border-[var(--color-ink)]"
+            style={{ boxShadow: "2px 2px 0 var(--color-terracotta)" }}
+          >
+            <Users className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1 sm:mr-2" />
+            Volunteers
+          </motion.div>
+
+          {/* Volunteer Cards */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-3 sm:mt-4">
+            {volunteers.map((volunteer, index) => (
               <motion.div
-                key={team}
-                initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-                animate={isInView ? { 
-                  opacity: 1, 
-                  scale: 1, 
-                  rotate: index % 2 === 0 ? -3 : 3 
-                } : {}}
+                key={volunteer.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.9 + index * 0.1 }}
-                whileHover={{ scale: 1.1, rotate: 0 }}
-                className="px-3 sm:px-6 py-2 sm:py-3 bg-[var(--color-cream)] border-2 sm:border-3 border-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-sm sm:text-base text-[var(--color-ink)] cursor-pointer"
-                style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
+                onHoverStart={() => setHoveredMember(volunteer.name)}
+                onHoverEnd={() => setHoveredMember(null)}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                className="px-4 sm:px-6 py-3 sm:py-4 bg-[var(--color-paper)] border-2 sm:border-3 border-[var(--color-ink)] cursor-pointer group text-center"
+                style={{ boxShadow: hoveredMember === volunteer.name ? "3px 3px 0 var(--color-terracotta)" : "2px 2px 0 var(--color-ink)" }}
               >
-                {team}
+                <h3 className="font-[family-name:var(--font-ancient)] text-sm sm:text-base font-bold text-[var(--color-ink)] group-hover:text-[var(--color-terracotta)] transition-colors">
+                  {volunteer.name}
+                </h3>
+                <p className="font-[family-name:var(--font-data)] text-[10px] sm:text-xs text-[var(--color-stone)] uppercase tracking-wider mt-1">
+                  {volunteer.role}
+                </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Contact CTA */}
+        {/* Contact Button */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -240,14 +253,21 @@ export default function Team() {
           className="mt-10 sm:mt-16 text-center"
         >
           <motion.a
-            href="mailto:codeandchaos@vjcet.org"
+            href="https://api.whatsapp.com/send/?phone=6282031325&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05, rotate: -1 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[var(--color-terracotta)] text-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-base sm:text-lg"
+            className="inline-flex flex-col items-center px-6 sm:px-10 py-3 sm:py-4 bg-[var(--color-terracotta)] text-[var(--color-cream)] border-3 sm:border-4 border-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-base sm:text-lg"
             style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
           >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-            Get in Touch
+            <span className="flex items-center gap-2">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+              Contact Us
+            </span>
+            <span className="font-[family-name:var(--font-data)] text-[9px] sm:text-[10px] opacity-70 font-normal mt-1 tracking-wide">
+              psst... say hi to Benedict 👋
+            </span>
           </motion.a>
         </motion.div>
       </div>

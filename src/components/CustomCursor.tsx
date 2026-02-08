@@ -7,7 +7,7 @@ export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
-  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [trail, setTrail] = useState<{ x: number; y: number; id: string }[]>([]);
 
   useEffect(() => {
     let trailId = 0;
@@ -15,9 +15,10 @@ export default function CustomCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       
-      // Add to trail
+      // Add to trail with unique ID
       trailId++;
-      setTrail(prev => [...prev.slice(-5), { x: e.clientX, y: e.clientY, id: trailId }]);
+      const uniqueId = `${Date.now()}-${trailId}`;
+      setTrail(prev => [...prev.slice(-5), { x: e.clientX, y: e.clientY, id: uniqueId }]);
     };
 
     const handleMouseOver = (e: MouseEvent) => {

@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { Star, Sparkles, Heart } from "lucide-react";
 import { useRef } from "react";
+import { DoodleSet2 } from "./Doodles";
 
 const sponsors = [
   { name: "Sponsor 1", tier: "platinum" },
@@ -27,6 +28,9 @@ export default function Sponsors() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+
+      {/* Floating Doodles */}
+      <DoodleSet2 />
 
       {/* Decorative Shapes */}
       <motion.div
@@ -92,14 +96,15 @@ export default function Sponsors() {
             Partner with Code & Chaos to connect with the brightest minds in technology.
             Multiple sponsorship tiers available.
           </p>
-          <motion.button
+          <motion.a
+            href="mailto:codeandchaos@vjcet.org?subject=Sponsorship%20Inquiry%20-%20Code%20%26%20Chaos%202026"
             whileHover={{ scale: 1.05, rotate: 2 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[var(--color-terracotta)] text-[var(--color-cream)] border-2 sm:border-3 border-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-bold text-sm sm:text-base uppercase"
             style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
           >
             Become a Sponsor
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Sponsor Grid Placeholder */}

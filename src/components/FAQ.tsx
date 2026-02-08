@@ -3,6 +3,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle, Star } from "lucide-react";
 import { useRef, useState } from "react";
+import { DoodleSet1 } from "./Doodles";
 
 const faqs = [
   {
@@ -49,6 +50,9 @@ export default function FAQ() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+      
+      {/* Floating Doodles */}
+      <DoodleSet1 />
       
       {/* Decorative Shapes */}
       <motion.div
@@ -172,7 +176,9 @@ export default function FAQ() {
               Still have questions?
             </p>
             <motion.a
-              href="mailto:codeandchaos@vjcet.org"
+              href="https://api.whatsapp.com/send/?phone=6282031325&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-sm sm:text-base border-2 border-[var(--color-ink)]"
               style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}

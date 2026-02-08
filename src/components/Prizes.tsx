@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { Trophy, Award, Lightbulb, Gift, Star, Sparkles } from "lucide-react";
 import { useRef } from "react";
+import { DoodleSet4 } from "./Doodles";
 
 const secondaryPrizes = [
   {
@@ -51,6 +52,9 @@ export default function Prizes() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+
+      {/* Floating Doodles */}
+      <DoodleSet4 />
 
       {/* Decorative Shapes */}
       <motion.div
@@ -133,7 +137,7 @@ export default function Prizes() {
             transition={{ delay: 0.6, type: "spring" }}
             className="font-[family-name:var(--font-ancient)] text-6xl sm:text-8xl md:text-9xl font-black text-[var(--color-ink)] my-2 sm:my-4"
           >
-            18K
+            ₹18,000
           </motion.div>
 
           {/* Subtitle */}

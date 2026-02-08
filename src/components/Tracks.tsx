@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { Zap, Terminal, Shield, Leaf, Brain, Globe, Star } from "lucide-react";
 import { useRef } from "react";
+import { DoodleSet2 } from "./Doodles";
 
 const tracks = [
   {
@@ -49,6 +50,9 @@ export default function Tracks() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+      
+      {/* Floating Doodles */}
+      <DoodleSet2 />
       
       {/* Decorative Shapes */}
       <motion.div

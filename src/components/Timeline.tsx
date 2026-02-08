@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Zap } from "lucide-react";
+import { DoodleSet3 } from "./Doodles";
 
 const timelineEvents = [
   {
@@ -83,6 +84,9 @@ export default function Timeline() {
     >
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-30" />
+
+      {/* Floating Doodles */}
+      <DoodleSet3 />
 
       {/* Decorative Shapes */}
       <motion.div

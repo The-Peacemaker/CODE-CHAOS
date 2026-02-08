@@ -28,6 +28,11 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5]">
+      {/* Skip to main content link for accessibility */}
+      <a href="#about" className="skip-link">
+        Skip to main content
+      </a>
+
       {/* Custom Cursor */}
       <CustomCursor />
 

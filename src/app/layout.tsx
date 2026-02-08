@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cinzel, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,6 +19,15 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#faf7f2",
+  viewportFit: "cover", // For notched phones
+};
 
 export const metadata: Metadata = {
   title: "Code & Chaos | VJCET's Greatest Overnight Hackathon 2026",
