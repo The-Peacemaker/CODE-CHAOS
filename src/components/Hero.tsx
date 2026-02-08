@@ -224,7 +224,7 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
         rotate,
         x: xOffset,
       }}
-      className="absolute right-[5%] top-[18%] w-[160px] h-[160px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] pointer-events-none z-0 hidden md:block"
+      className="absolute right-[2%] xl:right-[5%] top-[15%] w-[140px] lg:w-[180px] xl:w-[220px] 2xl:w-[260px] h-[140px] lg:h-[180px] xl:h-[220px] 2xl:h-[260px] pointer-events-none z-0 hidden lg:block"
     >
       <motion.div
         className="w-full h-full bg-[var(--color-paper)] border-3 border-[var(--color-ink)] flex items-center justify-center opacity-95"
@@ -235,21 +235,21 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
         animate={{ rotate: [12, 15, 12] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="text-center">
+        <div className="text-center px-2">
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
-            <Sparkles className="w-10 h-10 lg:w-14 lg:h-14 mx-auto text-[var(--color-terracotta)]" />
+            <Sparkles className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 mx-auto text-[var(--color-terracotta)]" />
           </motion.div>
           <motion.div 
-            className="font-[family-name:var(--font-ancient)] text-base lg:text-lg font-black text-[var(--color-ink)] mt-2"
+            className="font-[family-name:var(--font-ancient)] text-sm lg:text-base xl:text-lg font-black text-[var(--color-ink)] mt-2"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             14 HOURS
           </motion.div>
-          <div className="font-[family-name:var(--font-data)] text-xs text-[var(--color-stone)]">
+          <div className="font-[family-name:var(--font-data)] text-[10px] lg:text-xs text-[var(--color-stone)]">
             OF PURE CHAOS
           </div>
         </div>
@@ -513,9 +513,9 @@ export default function Hero() {
             </span>
           </h1>
           
-          {/* Animated Star Burst */}
+          {/* Animated Star Burst - positioned relative to prevent overlap */}
           <motion.div
-            className="absolute -right-2 md:-right-6 top-0"
+            className="absolute -right-1 sm:-right-2 lg:-right-4 -top-2 sm:-top-4"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ delay: 3, type: "spring", stiffness: 200 }}
@@ -524,13 +524,13 @@ export default function Hero() {
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              <Star className="w-10 h-10 md:w-14 md:h-14 text-[var(--color-gold)] fill-[var(--color-gold)]" />
+              <Star className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[var(--color-gold)] fill-[var(--color-gold)]" />
             </motion.div>
           </motion.div>
           
-          {/* Extra decorative stars */}
+          {/* Extra decorative stars - only on XL screens */}
           <motion.div
-            className="absolute -right-8 top-12 hidden md:block"
+            className="absolute -right-6 top-10 hidden xl:block"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 3.2, type: "spring" }}
@@ -539,7 +539,7 @@ export default function Hero() {
               animate={{ scale: [1, 1.2, 1], rotate: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Star className="w-6 h-6 text-[var(--color-terracotta)] fill-[var(--color-terracotta)]" />
+              <Star className="w-5 h-5 text-[var(--color-terracotta)] fill-[var(--color-terracotta)]" />
             </motion.div>
           </motion.div>
         </div>
