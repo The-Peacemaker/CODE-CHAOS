@@ -467,7 +467,7 @@ export default function RegistrationPage() {
 
     setIsSubmitting(true);
     
-    // Google Form entry IDs
+    // Google Form submission URL
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSewIyWHeRRAHW_sR8gJFIzGv5URhwA0TaNTwhurQAiYI74bdA/formResponse";
     
     // Map theme IDs to display names
@@ -479,53 +479,48 @@ export default function RegistrationPage() {
       openinnovation: "Open Innovation",
     };
     
-    // Build form data
-    const submitData = new URLSearchParams();
-    submitData.append("entry.2145810089", formData.teamName);
-    submitData.append("entry.897151969", String(formData.teamSize));
-    submitData.append("entry.1559420330", formData.leaderName);
-    submitData.append("entry.1439391927", formData.leaderPhone);
-    submitData.append("entry.1639504260", formData.leaderEmail);
-    submitData.append("entry.917794505", formData.college);
-    submitData.append("entry.1147408991", formData.department);
-    
+    // Build URL-encoded form data (Google Forms requires this format)
+    const params = new URLSearchParams();
+    params.append("entry.2145810089", formData.teamName);
+    params.append("entry.897151969", String(formData.teamSize));
+    params.append("entry.1559420330", formData.leaderName);
+    params.append("entry.1439391927", formData.leaderPhone);
+    params.append("entry.1639504260", formData.leaderEmail);
+    params.append("entry.917794505", formData.college);
+    params.append("entry.1147408991", formData.department);
     // Member 2
-    submitData.append("entry.342895641", formData.member2.name || "N/A");
-    submitData.append("entry.1687069429", formData.member2.email || "N/A");
-    submitData.append("entry.2040890039", formData.member2.phone || "N/A");
-    
+    params.append("entry.342895641", formData.member2.name || "N/A");
+    params.append("entry.1687069429", formData.member2.email || "N/A");
+    params.append("entry.2040890039", formData.member2.phone || "N/A");
     // Member 3
-    submitData.append("entry.716007235", formData.member3.name || "N/A");
-    submitData.append("entry.1348199730", formData.member3.email || "N/A");
-    submitData.append("entry.1489190325", formData.member3.phone || "N/A");
-    
+    params.append("entry.716007235", formData.member3.name || "N/A");
+    params.append("entry.1348199730", formData.member3.email || "N/A");
+    params.append("entry.1489190325", formData.member3.phone || "N/A");
     // Member 4
-    submitData.append("entry.13568527", formData.member4.name || "N/A");
-    submitData.append("entry.1986462531", formData.member4.email || "N/A");
-    submitData.append("entry.536437350", formData.member4.phone || "N/A");
-    
+    params.append("entry.13568527", formData.member4.name || "N/A");
+    params.append("entry.1986462531", formData.member4.email || "N/A");
+    params.append("entry.536437350", formData.member4.phone || "N/A");
     // Theme and Idea
-    submitData.append("entry.1728448481", themeNames[formData.theme] || formData.theme);
-    submitData.append("entry.871594244", formData.idea);
+    params.append("entry.1728448481", themeNames[formData.theme] || formData.theme);
+    params.append("entry.871594244", formData.idea);
     
-    try {
-      // Submit to Google Forms (using no-cors mode since Google Forms doesn't support CORS)
-      await fetch(GOOGLE_FORM_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: submitData.toString(),
-      });
-      
-      // Since no-cors doesn't return readable response, we assume success
-      setIsSuccess(true);
-    } catch {
-      alert("Something went wrong. Please try again!");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Production: no debug logs
+    
+    // Submit using fetch with no-cors and URL-encoded body
+    fetch(GOOGLE_FORM_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: params.toString(),
+    }).catch(() => {
+      // Ignore errors - no-cors won't give us a readable response anyway
+    });
+    
+    // Show success immediately (we can't verify with no-cors)
+    setIsSuccess(true);
+    setIsSubmitting(false);
   };
 
   // Success state
