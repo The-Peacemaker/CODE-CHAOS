@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Who can participate in Code & Chaos?",
     answer:
-      "Any student currently enrolled in a college in Kerala can participate. Teams of 2-4 members are accepted. Both undergraduate and postgraduate students are welcome.",
+      "Any student currently enrolled in a college in Kerala can participate. Teams of 1-4 members are accepted. Both undergraduate and postgraduate students are welcome.",
   },
   {
     question: "What should I bring to the hackathon?",

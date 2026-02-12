@@ -7,7 +7,7 @@ import { DoodleSet1 } from "./Doodles";
 
 const stats = [
   { icon: Clock, label: "Duration", value: "14 Hours", color: "var(--color-terracotta)" },
-  { icon: Users, label: "Team Size", value: "2-4 Members", color: "var(--color-gold)" },
+  { icon: Users, label: "Team Size", value: "1-4 Members", color: "var(--color-gold)" },
   { icon: Sparkles, label: "Entry Fee", value: "₹100", color: "var(--color-terracotta)" },
   { icon: MapPin, label: "Venue", value: "VJCET Labs", color: "var(--color-stone)" },
 ];
