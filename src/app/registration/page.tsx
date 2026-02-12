@@ -557,7 +557,7 @@ export default function RegistrationPage() {
               transition={{ delay: 0.4 }}
               className="font-[family-name:var(--font-ancient)] text-3xl sm:text-4xl md:text-6xl font-black text-[var(--color-ink)] mb-3 sm:mb-4"
             >
-              You are In!
+              Registered!
             </motion.h1>
             
             <motion.p
@@ -566,7 +566,7 @@ export default function RegistrationPage() {
               transition={{ delay: 0.6 }}
               className="font-[family-name:var(--font-grotesk)] text-base sm:text-lg text-[var(--color-stone)] mb-6 sm:mb-8 max-w-sm sm:max-w-md mx-auto px-2"
             >
-              Your squad is locked in for Code & Chaos 2026. Get ready to build something amazing!
+              Your application has been submitted! Shortlisted teams will be notified with payment details soon.
             </motion.p>
             
             <motion.div
