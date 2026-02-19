@@ -121,7 +121,7 @@ const ZigzagDoodle = () => (
 const CircleDoodle = () => (
   <motion.div
     className="w-10 h-10 border-3 border-[var(--color-gold)] rounded-full"
-    animate={{ 
+    animate={{
       scale: [1, 1.2, 1],
       borderRadius: ["50%", "30%", "50%"],
     }}
@@ -138,8 +138,8 @@ const doodleComponents: Record<string, React.FC> = {
 };
 
 // Mouse-tracking sticker component
-function MouseTrackingSticker({ sticker, index, smoothMouseX, smoothMouseY }: { 
-  sticker: StickerConfig; 
+function MouseTrackingSticker({ sticker, index, smoothMouseX, smoothMouseY }: {
+  sticker: StickerConfig;
   index: number;
   smoothMouseX: MotionValue<number>;
   smoothMouseY: MotionValue<number>;
@@ -147,7 +147,7 @@ function MouseTrackingSticker({ sticker, index, smoothMouseX, smoothMouseY }: {
   const Icon = sticker.icon;
   const xOffset = useTransform(smoothMouseX, [-1, 1], [-15 * (index % 2 === 0 ? 1 : -1), 15 * (index % 2 === 0 ? 1 : -1)]);
   const yOffset = useTransform(smoothMouseY, [-1, 1], [-15 * (index % 2 === 0 ? -1 : 1), 15 * (index % 2 === 0 ? -1 : 1)]);
-  
+
   return (
     <motion.div
       className="absolute pointer-events-none z-0 hidden lg:block"
@@ -163,19 +163,19 @@ function MouseTrackingSticker({ sticker, index, smoothMouseX, smoothMouseY }: {
     >
       <motion.div
         className="p-2 lg:p-3 bg-[var(--color-paper)] border-2 border-[var(--color-ink)]"
-        style={{ 
+        style={{
           boxShadow: "3px 3px 0 var(--color-ink)",
           rotate: sticker.rotation,
         }}
         whileHover={{ scale: 1.2, rotate: 0 }}
-        animate={{ 
+        animate={{
           y: [0, -8, 0],
           rotate: [sticker.rotation, sticker.rotation + 3, sticker.rotation],
         }}
         transition={{ duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Icon 
-          style={{ width: sticker.size, height: sticker.size, color: sticker.color }} 
+        <Icon
+          style={{ width: sticker.size, height: sticker.size, color: sticker.color }}
         />
       </motion.div>
     </motion.div>
@@ -191,7 +191,7 @@ function MouseTrackingDoodle({ doodle, smoothMouseX, smoothMouseY }: {
   const DoodleComponent = doodleComponents[doodle.type];
   const xOffset = useTransform(smoothMouseX, [-1, 1], [10, -10]);
   const yOffset = useTransform(smoothMouseY, [-1, 1], [10, -10]);
-  
+
   return (
     <motion.div
       className="absolute pointer-events-none z-0 opacity-70 hidden lg:block"
@@ -217,11 +217,11 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
   smoothMouseX: MotionValue<number>;
 }) {
   const xOffset = useTransform(smoothMouseX, [-1, 1], [-20, 20]);
-  
+
   return (
     <motion.div
-      style={{ 
-        y, 
+      style={{
+        y,
         rotate,
         x: xOffset,
       }}
@@ -231,17 +231,17 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
       <motion.div
         className="absolute -left-4 lg:-left-6 -top-3 lg:-top-4"
         animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-        transition={{ 
+        transition={{
           rotate: { duration: 10, repeat: Infinity, ease: "linear" },
           scale: { duration: 2, repeat: Infinity }
         }}
       >
         <Star className="w-6 h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 text-[var(--color-gold)] fill-[var(--color-gold)]" />
       </motion.div>
-      
+
       <motion.div
         className="w-full h-full bg-[var(--color-paper)] border-3 border-[var(--color-ink)] flex items-center justify-center"
-        style={{ 
+        style={{
           boxShadow: "6px 6px 0 var(--color-ink)",
           rotate: 12,
         }}
@@ -255,7 +255,7 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
           >
             <Sparkles className="w-6 h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 mx-auto text-[var(--color-terracotta)]" />
           </motion.div>
-          <motion.div 
+          <motion.div
             className="font-[family-name:var(--font-ancient)] text-xs lg:text-sm xl:text-base 2xl:text-lg font-black text-[var(--color-ink)] mt-1 lg:mt-2"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -267,7 +267,7 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
           </div>
         </div>
       </motion.div>
-      
+
       {/* Small star at bottom right of box */}
       <motion.div
         className="absolute -right-2 lg:-right-3 -bottom-2 lg:-bottom-3"
@@ -283,7 +283,7 @@ function BackgroundSticker({ y, rotate, smoothMouseX }: {
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [clickSparks, setClickSparks] = useState<{ id: string; x: number; y: number }[]>([]);
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -291,7 +291,7 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
-  
+
   // Mouse tracking with spring physics
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -338,9 +338,9 @@ export default function Hero() {
     >
       {/* Animated Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-40" />
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-grid opacity-20"
-        style={{ 
+        style={{
           x: smoothMouseX,
           y: smoothMouseY,
           scale: 1.1,
@@ -375,25 +375,25 @@ export default function Hero() {
           </motion.div>
         ))}
       </AnimatePresence>
-      
+
       {/* Scattered Icon Stickers with mouse parallax */}
       {scatteredStickers.map((sticker, i) => (
-        <MouseTrackingSticker 
-          key={i} 
-          sticker={sticker} 
-          index={i} 
-          smoothMouseX={smoothMouseX} 
-          smoothMouseY={smoothMouseY} 
+        <MouseTrackingSticker
+          key={i}
+          sticker={sticker}
+          index={i}
+          smoothMouseX={smoothMouseX}
+          smoothMouseY={smoothMouseY}
         />
       ))}
 
       {/* Floating Doodles */}
       {floatingDoodles.map((doodle, i) => (
-        <MouseTrackingDoodle 
-          key={i} 
-          doodle={doodle} 
-          smoothMouseX={smoothMouseX} 
-          smoothMouseY={smoothMouseY} 
+        <MouseTrackingDoodle
+          key={i}
+          doodle={doodle}
+          smoothMouseX={smoothMouseX}
+          smoothMouseY={smoothMouseY}
         />
       ))}
 
@@ -408,7 +408,7 @@ export default function Hero() {
           transition={{ delay: 2.0 }}
           className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8"
         >
-          <motion.div 
+          <motion.div
             className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase border-2 border-[var(--color-ink)] cursor-pointer"
             style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
             whileHover={{ scale: 1.1, rotate: 5, y: -5 }}
@@ -418,7 +418,7 @@ export default function Hero() {
           >
             FEB 25-26, 2026
           </motion.div>
-          <motion.div 
+          <motion.div
             className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase border-2 border-[var(--color-ink)] cursor-pointer"
             style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
             whileHover={{ scale: 1.1, rotate: -5, y: -5 }}
@@ -428,7 +428,7 @@ export default function Hero() {
           >
             VJCET Campus
           </motion.div>
-          <motion.div 
+          <motion.div
             className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--color-paper)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase border-2 border-[var(--color-ink)] cursor-pointer"
             style={{ boxShadow: "3px 3px 0 var(--color-ink)" }}
             whileHover={{ scale: 1.1, y: -5 }}
@@ -439,9 +439,9 @@ export default function Hero() {
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                <Circle className="w-2 h-2 fill-green-500 text-green-500" />
+                <Circle className="w-2 h-2 fill-red-500 text-red-500" />
               </motion.div>
-              Registrations Open
+              Registrations Closed
             </span>
           </motion.div>
         </motion.div>
@@ -457,8 +457,8 @@ export default function Hero() {
                 initial="hidden"
                 animate="visible"
                 className="inline-block cursor-default"
-                whileHover={{ 
-                  scale: 1.1, 
+                whileHover={{
+                  scale: 1.1,
                   color: "var(--color-terracotta)",
                   rotate: Math.random() > 0.5 ? 5 : -5,
                   y: -10,
@@ -476,8 +476,8 @@ export default function Hero() {
             >
               <motion.span
                 className="inline-block"
-                animate={{ 
-                  rotate: [0, 10, -10, 0], 
+                animate={{
+                  rotate: [0, 10, -10, 0],
                   scale: [1, 1.1, 1],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -487,7 +487,7 @@ export default function Hero() {
             </motion.span>
           </h1>
         </div>
-        
+
         <div className="overflow-hidden relative">
           <h1 className="font-[family-name:var(--font-ancient)] text-[18vw] sm:text-[15vw] md:text-[12vw] leading-[0.85] sm:leading-[0.9] text-[var(--color-ink)] uppercase tracking-tighter font-black relative">
             <span className="relative flex">
@@ -499,8 +499,8 @@ export default function Hero() {
                   initial="hidden"
                   animate="visible"
                   className="inline-block cursor-default"
-                  whileHover={{ 
-                    scale: 1.1, 
+                  whileHover={{
+                    scale: 1.1,
                     color: "var(--color-gold)",
                     rotate: Math.random() > 0.5 ? 8 : -8,
                     y: -15,
@@ -534,7 +534,7 @@ export default function Hero() {
               </svg>
             </span>
           </h1>
-          
+
           {/* Animated Star Burst - only on larger screens to prevent overlap */}
           <motion.div
             className="absolute -right-2 -top-6 hidden sm:block"
@@ -549,7 +549,7 @@ export default function Hero() {
               <Star className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[var(--color-gold)] fill-[var(--color-gold)]" />
             </motion.div>
           </motion.div>
-          
+
           {/* Extra decorative stars - only on 2XL screens */}
           <motion.div
             className="absolute -right-8 top-8 hidden 2xl:block"
@@ -574,7 +574,7 @@ export default function Hero() {
           className="font-[family-name:var(--font-grotesk)] text-base sm:text-lg md:text-2xl text-[var(--color-stone)] mt-6 sm:mt-8 max-w-xl"
         >
           14 hours.{" "}
-          <motion.span 
+          <motion.span
             className="bg-[var(--color-gold)] px-2 text-[var(--color-ink)] font-bold inline-block"
             whileHover={{ scale: 1.05, rotate: -2 }}
             animate={{ rotate: [0, 1, -1, 0] }}
@@ -583,7 +583,7 @@ export default function Hero() {
             Zero sleep.
           </motion.span>{" "}
           All colleges across Kerala.
-           one epic overnight hackathon.
+          one epic overnight hackathon.
         </motion.p>
 
         {/* Bottom Action Section */}
@@ -605,14 +605,14 @@ export default function Hero() {
             <motion.div
               className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-6 h-6 sm:w-8 sm:h-8 bg-[var(--color-terracotta)] border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center"
               animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-              transition={{ 
+              transition={{
                 rotate: { duration: 4, repeat: Infinity, ease: "linear" },
                 scale: { duration: 1, repeat: Infinity }
               }}
             >
               <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--color-cream)]" />
             </motion.div>
-            <motion.div 
+            <motion.div
               className="font-[family-name:var(--font-ancient)] text-3xl sm:text-4xl md:text-6xl font-black text-[var(--color-ink)]"
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -638,7 +638,7 @@ export default function Hero() {
               animate={{ x: ["-100%", "200%"] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             />
-            <span className="relative z-10">Register Now</span>
+            <span className="relative z-10">Registrations Closed</span>
             <motion.div
               className="relative z-10"
               animate={{ x: [0, 5, 0] }}
@@ -648,7 +648,7 @@ export default function Hero() {
             </motion.div>
             <motion.span
               className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs border-2 border-[var(--color-ink)] z-20"
-              animate={{ 
+              animate={{
                 rotate: [5, -5, 5],
                 scale: [1, 1.1, 1],
               }}

@@ -41,8 +41,8 @@ export default function Navbar() {
         transition={{ duration: 0.5, delay: 2 }}
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-          scrolled 
-            ? "bg-[var(--color-cream)]/95 backdrop-blur-md border-b-3 border-[var(--color-ink)]" 
+          scrolled
+            ? "bg-[var(--color-cream)]/95 backdrop-blur-md border-b-3 border-[var(--color-ink)]"
             : "bg-transparent"
         )}
       >
@@ -78,14 +78,14 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.2 + index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.1, 
+                whileHover={{
+                  scale: 1.1,
                   rotate: item.rotation,
                   y: -3
                 }}
                 className={cn(
                   "relative px-4 py-2 font-[family-name:var(--font-data)] text-xs uppercase tracking-wider transition-all",
-                  hoveredItem === item.href 
+                  hoveredItem === item.href
                     ? "bg-[var(--color-gold)] text-[var(--color-ink)] border-2 border-[var(--color-ink)]"
                     : "text-[var(--color-ink)] hover:text-[var(--color-terracotta)]"
                 )}
@@ -115,7 +115,7 @@ export default function Navbar() {
               className="relative bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold px-6 py-3 border-3 border-[var(--color-ink)] uppercase tracking-wider"
               style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
             >
-              Register Now!
+              Registrations Closed
               <motion.span
                 className="absolute -top-2 -right-2 w-4 h-4 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full"
                 animate={{ scale: [1, 1.2, 1] }}
@@ -172,7 +172,7 @@ export default function Navbar() {
           >
             {/* Grid Background */}
             <div className="absolute inset-0 bg-grid opacity-30" />
-            
+
             {/* Decorative Shapes */}
             <motion.div
               className="absolute top-32 right-8 w-16 h-16 bg-[var(--color-gold)] border-3 border-[var(--color-ink)]"
@@ -184,7 +184,7 @@ export default function Navbar() {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            
+
             <div className="relative p-6 flex flex-col h-full">
               <div className="space-y-3">
                 {navItems.map((item, index) => (
@@ -214,11 +214,11 @@ export default function Navbar() {
                 className="mt-8 w-full bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-xl py-5 uppercase tracking-wider border-3 border-[var(--color-ink)] block text-center"
                 style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
               >
-                Register Now!
+                Registrations Closed
               </motion.a>
 
               <div className="mt-auto pb-8 text-center">
-                <motion.div 
+                <motion.div
                   className="inline-block px-4 py-2 bg-[var(--color-paper)] border-2 border-[var(--color-ink)] font-[family-name:var(--font-data)] text-sm text-[var(--color-ink)]"
                   style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
                   animate={{ rotate: [-1, 1, -1] }}
