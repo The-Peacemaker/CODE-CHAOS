@@ -54,7 +54,7 @@ export default function Footer() {
               >
                 Ready to compete?
               </motion.div>
-              
+
               <h2 className="font-[family-name:var(--font-ancient)] text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.9] tracking-tight text-[var(--color-cream)]">
                 <motion.span
                   initial={{ opacity: 0, x: -50 }}
@@ -104,7 +104,7 @@ export default function Footer() {
                 className="group relative bg-[var(--color-cream)] text-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-black text-lg sm:text-xl md:text-2xl px-8 sm:px-10 md:px-16 py-4 sm:py-5 md:py-8 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wider flex items-center gap-3 sm:gap-4 w-full lg:w-auto justify-center"
                 style={{ boxShadow: "6px 6px 0 var(--color-ink)" }}
               >
-                Register Now
+                Registrations Closed
                 <ArrowUpRight className="w-5 h-5 sm:w-7 sm:h-7 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 <motion.span
                   className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-6 h-6 sm:w-8 sm:h-8 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center"
@@ -114,8 +114,8 @@ export default function Footer() {
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--color-ink)]" />
                 </motion.span>
               </motion.a>
-              
-              <motion.div 
+
+              <motion.div
                 className="mt-3 sm:mt-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-[var(--color-ink)]/20 border-2 border-[var(--color-ink)]/30 font-[family-name:var(--font-data)] text-xs sm:text-sm text-[var(--color-cream)]"
                 style={{ rotate: "1deg" }}
               >
@@ -179,7 +179,7 @@ export default function Footer() {
           </div>
 
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2 sm:gap-3"
             whileHover={{ scale: 1.05 }}
           >
