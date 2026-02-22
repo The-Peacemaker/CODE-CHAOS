@@ -65,7 +65,7 @@ export default function Sponsors() {
           </p>
         </motion.div>
 
-        {/* ===== SPONSOR 1 — PERUMALIL CREATIVE ===== */}
+        {/* ===== SPONSOR 1 — Coordinate Systems ===== */}
         <motion.div
           initial={{ opacity: 0, y: 30, rotate: -1 }}
           animate={isInView ? { opacity: 1, y: 0, rotate: -1 } : {}}
@@ -103,24 +103,24 @@ export default function Sponsors() {
             </motion.div>
 
             <motion.div
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-3 border-[var(--color-ink)] bg-[var(--color-ink)] flex items-center justify-center p-4 sm:p-5 flex-shrink-0 relative overflow-hidden"
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-3 border-[var(--color-ink)] bg-white flex items-center justify-center p-4 sm:p-5 flex-shrink-0 relative overflow-hidden"
               style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
               animate={{ rotate: [0, 2, 0, -2, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src="/images/PERUMALIL-CREATIVE.png"
-                alt="PERUMALIL CREATIVE - Sponsor 1"
+                src="/images/coordinate-system.jpeg"
+                alt="Coordinate Systems - Sponsor 1"
                 width={200}
                 height={200}
-                className="object-contain w-full h-full scale-[1.8]"
+                className="object-contain w-full h-full"
               />
             </motion.div>
 
             {/* Info */}
             <div className="text-center sm:text-left flex-1">
               <h3 className="font-[family-name:var(--font-ancient)] text-2xl sm:text-3xl md:text-4xl font-black text-[var(--color-ink)] mb-2 sm:mb-3">
-                PERUMALIL CREATIVE
+                Coordinate Systems
               </h3>
               <div className="inline-block px-3 py-1 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase tracking-wider text-[var(--color-ink)] mb-3 sm:mb-4"
                 style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
@@ -128,13 +128,13 @@ export default function Sponsors() {
                 Sponsor 1
               </div>
               <p className="font-[family-name:var(--font-grotesk)] text-xs sm:text-sm md:text-base text-[var(--color-stone)] leading-relaxed max-w-md">
-                Your partner in growth: SEO, Digital Marketing, Video Production, Web &amp; Mobile App Development, Photography, and more!
+                Empowering the next generation of innovators. Coordinate Systems is proud to be Sponsor 1 of Code &amp; Chaos 2026.
               </p>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* ===== SPONSOR 2 — Coordinate Systems ===== */}
+        {/* ===== SPONSOR 2 — PERUMALIL CREATIVE ===== */}
         <motion.div
           initial={{ opacity: 0, y: 30, rotate: 1 }}
           animate={isInView ? { opacity: 1, y: 0, rotate: 1 } : {}}
@@ -172,24 +172,24 @@ export default function Sponsors() {
 
             {/* Logo */}
             <motion.div
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-3 border-[var(--color-ink)] bg-white flex items-center justify-center p-4 sm:p-5 flex-shrink-0 relative overflow-hidden"
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-3 border-[var(--color-ink)] bg-[var(--color-ink)] flex items-center justify-center p-4 sm:p-5 flex-shrink-0 relative overflow-hidden"
               style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
               animate={{ rotate: [0, -2, 0, 2, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src="/images/coordinate-system.jpeg"
-                alt="Coordinate Systems - Sponsor 2"
+                src="/images/PERUMALIL-CREATIVE.png"
+                alt="PERUMALIL CREATIVE - Sponsor 2"
                 width={200}
                 height={200}
-                className="object-contain w-full h-full"
+                className="object-contain w-full h-full scale-[1.8]"
               />
             </motion.div>
 
             {/* Info */}
             <div className="text-center sm:text-left flex-1">
               <h3 className="font-[family-name:var(--font-ancient)] text-2xl sm:text-3xl md:text-4xl font-black text-[var(--color-ink)] mb-2 sm:mb-3">
-                Coordinate Systems
+                PERUMALIL CREATIVE
               </h3>
               <div className="inline-block px-3 py-1 bg-[var(--color-rust)] border-2 border-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs uppercase tracking-wider text-[var(--color-cream)] mb-3 sm:mb-4"
                 style={{ boxShadow: "2px 2px 0 var(--color-ink)" }}
@@ -197,7 +197,7 @@ export default function Sponsors() {
                 Sponsor 2
               </div>
               <p className="font-[family-name:var(--font-grotesk)] text-xs sm:text-sm md:text-base text-[var(--color-stone)] leading-relaxed max-w-md">
-                Empowering the next generation of innovators. Coordinate Systems is proud to be Sponsor 2 of Code &amp; Chaos 2026.
+                Your partner in growth: SEO, Digital Marketing, Video Production, Web &amp; Mobile App Development, Photography, and more!
               </p>
             </div>
           </motion.div>
