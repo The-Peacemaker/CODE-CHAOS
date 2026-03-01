@@ -106,7 +106,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <motion.a
-              href="/registration"
+              href="/result"
               initial={{ opacity: 0, rotate: 3 }}
               animate={{ opacity: 1, rotate: 3 }}
               transition={{ delay: 2.7 }}
@@ -115,7 +115,7 @@ export default function Navbar() {
               className="relative bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold px-6 py-3 border-3 border-[var(--color-ink)] uppercase tracking-wider"
               style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
             >
-              Registrations Closed
+              Results Out
               <motion.span
                 className="absolute -top-2 -right-2 w-4 h-4 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full"
                 animate={{ scale: [1, 1.2, 1] }}
@@ -206,7 +206,7 @@ export default function Navbar() {
               </div>
 
               <motion.a
-                href="/registration"
+                href="/result"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -214,7 +214,7 @@ export default function Navbar() {
                 className="mt-8 w-full bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-bold text-xl py-5 uppercase tracking-wider border-3 border-[var(--color-ink)] block text-center"
                 style={{ boxShadow: "4px 4px 0 var(--color-ink)" }}
               >
-                Registrations Closed
+                Results Out
               </motion.a>
 
               <div className="mt-auto pb-8 text-center">

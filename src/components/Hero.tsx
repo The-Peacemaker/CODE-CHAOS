@@ -439,9 +439,9 @@ export default function Hero() {
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                <Circle className="w-2 h-2 fill-red-500 text-red-500" />
+                <Circle className="w-2 h-2 fill-green-500 text-green-500" />
               </motion.div>
-              Registrations Closed
+              Results Out
             </span>
           </motion.div>
         </motion.div>
@@ -626,7 +626,7 @@ export default function Hero() {
 
           {/* Register Button with extra flair */}
           <motion.a
-            href="/registration"
+            href="/result"
             whileHover={{ scale: 1.05, rotate: 2, y: -5 }}
             whileTap={{ scale: 0.95, rotate: -2 }}
             className="relative bg-[var(--color-terracotta)] text-[var(--color-cream)] font-[family-name:var(--font-ancient)] font-black text-base sm:text-lg md:text-2xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wide flex items-center gap-2 sm:gap-3 md:gap-4 group overflow-hidden"
@@ -638,7 +638,7 @@ export default function Hero() {
               animate={{ x: ["-100%", "200%"] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
             />
-            <span className="relative z-10">Registrations Closed</span>
+            <span className="relative z-10">Results Out</span>
             <motion.div
               className="relative z-10"
               animate={{ x: [0, 5, 0] }}
@@ -646,16 +646,6 @@ export default function Hero() {
             >
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
             </motion.div>
-            <motion.span
-              className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-[var(--color-gold)] text-[var(--color-ink)] font-[family-name:var(--font-data)] text-[10px] sm:text-xs border-2 border-[var(--color-ink)] z-20"
-              animate={{
-                rotate: [5, -5, 5],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              ₹100
-            </motion.span>
           </motion.a>
         </motion.div>
 

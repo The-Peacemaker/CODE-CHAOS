@@ -98,13 +98,13 @@ export default function Footer() {
               className="flex flex-col items-start lg:items-end w-full lg:w-auto"
             >
               <motion.a
-                href="/registration"
+                href="/result"
                 whileHover={{ scale: 1.02, rotate: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="group relative bg-[var(--color-cream)] text-[var(--color-ink)] font-[family-name:var(--font-ancient)] font-black text-lg sm:text-xl md:text-2xl px-8 sm:px-10 md:px-16 py-4 sm:py-5 md:py-8 border-3 sm:border-4 border-[var(--color-ink)] uppercase tracking-wider flex items-center gap-3 sm:gap-4 w-full lg:w-auto justify-center"
                 style={{ boxShadow: "6px 6px 0 var(--color-ink)" }}
               >
-                Registrations Closed
+                Results Out
                 <ArrowUpRight className="w-5 h-5 sm:w-7 sm:h-7 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 <motion.span
                   className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-6 h-6 sm:w-8 sm:h-8 bg-[var(--color-gold)] border-2 border-[var(--color-ink)] rounded-full flex items-center justify-center"
